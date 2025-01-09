@@ -2,20 +2,18 @@ import unittest
 
 from management.product_handler import add_product_extra
 
-from ...data import original_products
+from ..data import original_products
 
 
 class TestExtraAddProduct(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         function_name = "add_product_extra"
-        cls.base_msg = f"\n Verifique se sua função `{function_name}` está %s."
+        cls.base_msg = f"Verifique se sua função `{function_name}` está %s."
 
     def test_extra_can_add_product(self):
         """
-        Testa se a função `add_product_extra` 
-        adiciona e retorna o produto adicionado 
-        corretamente.
+        Testa se a função `add_product_extra` adiciona e retorna o produto adicionado corretamente [0 pts].
         """
         required_keys = ("description", "price", "rating", "title", "type")
         new_product = {
@@ -28,7 +26,7 @@ class TestExtraAddProduct(unittest.TestCase):
 
         result = add_product_extra(original_products, *required_keys, **new_product)
         expected = {
-            "_id": 103,
+            "_id": 51,
             "title": "Bolinho JS",
             "price": 1.0,
             "rating": 2,
@@ -47,8 +45,7 @@ class TestExtraAddProduct(unittest.TestCase):
 
     def test_extra_add_product_with_empty_menu(self):
         """
-        Testa se a função `add_product_extra` gera um id, 
-        adiciona e retorna corretamente com um menu vazio.
+        Testa se a função `add_product_extra` gera um id, adiciona e retorna corretamente com um menu vazio [0 pts].
         """
         required_keys = ("description", "price", "rating", "title", "type")
         new_product = {
@@ -74,9 +71,7 @@ class TestExtraAddProduct(unittest.TestCase):
 
     def test_extra_add_product_required_keys(self):
         """
-        Testa se a função `add_product_extra` 
-        levanta um KeyError caso alguma chave obrigatória 
-        não seja passada no produto.
+        Testa se a função `add_product_extra` levanta um KeyError caso alguma chave obrigatória nao seja passada no produto [0 pts].
         """
 
         required_keys = ["price", "rating", "title", "type", "description"]
@@ -116,9 +111,7 @@ class TestExtraAddProduct(unittest.TestCase):
 
     def test_extra_add_product_with_extra_keys(self):
         """
-        Testa se a função `add_product_extra` 
-        exclui chaves não obrigatórias antes de adicionar o 
-        produto ao menu.
+        Testa se a função `add_product_extra` exclui chaves não obrigatórias antes de adicionar o produto ao menu [0 pts].
         """
         required_keys = ("description", "price", "rating", "title", "type")
         new_product = {

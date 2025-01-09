@@ -7,7 +7,7 @@ class TestCalculateTab(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         function_name = "calculate_tab"
-        cls.base_msg = f"\n Verifique se sua função `{function_name}` está %s."
+        cls.base_msg = f"Verifique se sua função `{function_name}` está %s."
         cls.tables_set = [
             {
                 "expected": {"subtotal": "$188.29"},
@@ -37,8 +37,7 @@ class TestCalculateTab(unittest.TestCase):
 
     def test_calculate_tab_success(self):
         """
-        Testa se a função `calculate_tab` 
-        retorna adequadamente.
+        Testa se a função `calculate_tab` retorna adequadamente [0 pts].
         """
         table_1 = [{"_id": 1, "amount": 5}, {"_id": 19, "amount": 5}]
         result = calculate_tab(table_1)

@@ -1,72 +1,27 @@
-<h1> M5 - Kiosque </h1>
+# M5 - S1 - Kiosque
 
-<h2> Como rodar os testes localmente </h2>
+Esse projeto foi feito como entrega avaliativa no módulo 5 do curso de desenvolvedor Full Stack na Kenzie Academy Brasil. Nele, é desenvolvida uma aplicação para simular um sistema de pedidos para um quiosque.
 
-<h3> Preparação do ambiente <h3>
+No projeto foi utilizado somente Python, interagindo com uma base de dados em memória (uma lista em Python).
 
-<p>Instalar o pacote <strong>pytest-testdox</strong>:</p>
+Foram criadas funções para adicionar produtos, listar cada produto, listar produtos por seus tipos, realizar a contagem de produtos no menu por categoria, além de uma função que calcula o total do pedido com os produtos selecionados. 
 
+## Como rodar os testes localmente
+
+1. Instalar o pacote `pytest-testdox`:
 ```shell
 pip install pytest-testdox
 ```
 
-<p>Rodar os testes referentes a cada tarefa isoladamente:</p>
-
+2. Rodar os testes no diretório principal do projeto:
 ```shell
-pytest --testdox -vvs caminho/para/o/modulo/da/tarefa
+pytest --testdox -vvs
 ```
 
-Exemplo:
-<ul>
-<li>Tarefa 1</li>
+
+### Rodando os testes localmente para o extra (não contabiliza para a entrega)
 
 ```shell
-pytest --testdox -vvs tests/tarefas/tarefa_1/
+pytest --testdox -vvs tests/test_management/extra_add_product.py
 ```
 
-<li>Tarefa 2</li>
-
-```shell
-pytest --testdox -vvs tests/tarefas/tarefa_2/
-```
-<li>Tarefa 3</li>
-
-```shell
-pytest --testdox -vvs tests/tarefas/tarefa_3/
-```
-
-</ul>
-
-### **Importante!!**
-Caso esteja utilizando Windows e, ao rodar o comando `pytest --testdox` aparecer um erro de **cmdlet**, troque o inicio do comando pelo seguinte:
-
-```shell
-python -m pytest --testdox
-```
-
-<hr>
-<p>Você também pode rodar cada método de teste isoladamente:</p>
-
-```shell
-pytest --testdox -vvs caminho/para/o/arquivo/de/teste::NomeDaClasse::nome_do_metodo_de_teste
-```
-
-<p>Exemplo: executar somente "test_can_get_product_by_id".</p>
-
-```shell
-pytest --testdox -vvs tests/tarefas/tarefa_1/test_get_product_by_id.py::TestGetProductById::test_can_get_product_by_id
-```
-<hr>
-<p>Os testes referentes as funcionalidades extras não são executados por padrão caso você não especifique o caminho até eles. Então caso você queira os executar, rode:</p>
-
-```shell
-pytest --testdox -vvs tests/tarefas/tarefa_3/extra_add_product.py
-```
-
-## Rodando todos os testes
-
-Para rodar todos os testes da aplicação de uma vez, execute o seguinte comando no terminal (estando na raiz do projeto)
-
-```shell
-pytest --testdox
-```

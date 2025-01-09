@@ -2,19 +2,18 @@ import unittest
 
 from management.product_handler import add_product
 
-from tests.data.original_menu import original_products
+from ..data import original_products
 
 
 class TestAddProduct(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         function_name = "add_product"
-        cls.base_msg = f"\n Verifique se sua função `{function_name}` está %s."
+        cls.base_msg = f"Verifique se sua função `{function_name}` está %s."
 
     def test_can_add_product(self):
         """
-        Testa se a função `add_product` 
-        adiciona e retorna o produto adicionado corretamente.
+        Testa se a função `add_product` adiciona e retorna o produto adicionado corretamente [0 pts].
         """
         new_product = {
             "title": "Bolinho JS",
@@ -26,7 +25,7 @@ class TestAddProduct(unittest.TestCase):
 
         result = add_product(original_products, **new_product)
         expected = {
-            "_id": 103,
+            "_id": 51,
             "title": "Bolinho JS",
             "price": 1.0,
             "rating": 2,
@@ -45,8 +44,7 @@ class TestAddProduct(unittest.TestCase):
 
     def test_add_product_with_empty_menu(self):
         """
-        Testa se a função `add_product` gera um id, 
-        adiciona e retorna corretamente com um menu vazio.
+        Testa se a função `add_product` gera um id, adiciona e retorna corretamente com um menu vazio [0 pts].
         """
         new_product = {
             "title": "Suco de React",
